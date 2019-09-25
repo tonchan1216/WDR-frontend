@@ -18,6 +18,9 @@ h1 {
   padding: 20px 0;
   color: #00539f;
   text-shadow: 3px 3px 1px black;
+  animation-name: fadeInTitle;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
 }
 
 p,
@@ -60,5 +63,14 @@ li {
   /*画面幅が781px以上の時*/
   body {
     width: 80%;
+  }
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
