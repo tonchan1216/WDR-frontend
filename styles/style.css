@@ -20,7 +20,8 @@ h1 {
   text-shadow: 3px 3px 1px black;
 }
 
-p, li {
+p,
+li {
   font-size: 16px;
   line-height: 2;
   letter-spacing: 1px;
@@ -44,3 +45,20 @@ p, li {
   background: aqua;
 }
 
+@media screen and (max-width: 480px) {
+  /*画面幅が480pxまでの時*/
+  body {
+    width: 100%;
+    padding: 0;
+    border: 0;
+  }
+  h1 {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 781px) {
+  /*画面幅が781px以上の時*/
+  body {
+    width: 80%;
+  }
+}
