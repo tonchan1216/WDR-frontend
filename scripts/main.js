@@ -30,3 +30,17 @@ function addSkill() {
     // 生成したdiv要素を追加する
     document.getElementById('contents').appendChild(article);
 }
+
+function fetchApi() {
+    var url = "assets/tenki.json";
+    fetch(url).then(function(response) {
+        response.text().then(function(text) {
+            var json = JSON.parse(text);
+            var json_forecasts = json["forecasts"][0];
+            var weatherItem = document.getElementById('weather-news');
+            weatherItem.textContent = json_forecasts["date"]+"："+json_forecasts["telop"];
+        });
+    });
+}
+
+fetchApi()
