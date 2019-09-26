@@ -1,0 +1,25 @@
+{
+  "name": "wdr-frontend",
+  "version": "1.0.0",
+  "description": "Web Developer Roadmapに標された各エンジニアスキルをスタンプ見立てて、様々なWeb技術に触れていく企画。\r つまり、スタンプラリーという形式によって、凄腕エンジニアになるという本来の目的を崩壊させ、薄っぺらい達成感を獲得するというもの。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonchan1216/WDR-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonchan1216/WDR-frontend/issues"
+  },
+  "homepage": "https://github.com/tonchan1216/WDR-frontend#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
