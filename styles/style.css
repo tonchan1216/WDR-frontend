@@ -1,26 +1,10 @@
+@charset "UTF-8";
 html {
   font-family: "Open Sans", sans-serif;
-  background-color: #00539f;
 }
 
 body {
-  width: 600px;
   margin: 0 auto;
-  background-color: #ff9500;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
-}
-
-h1 {
-  font-size: 40px;
-  text-align: center;
-  margin: 0;
-  padding: 20px 0;
-  color: #00539f;
-  text-shadow: 3px 3px 1px black;
-  animation-name: fadeInTitle;
-  animation-duration: 3s;
-  animation-timing-function: ease-in;
 }
 
 p,
@@ -30,22 +14,82 @@ li {
   letter-spacing: 1px;
 }
 
-#menu {
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 600px;
+}
+
+header h1 {
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
+  padding: 30px 0;
+  color: #00539f;
+  animation-name: fadeInTitle;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+}
+header nav {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: stretch;
+}
+header h2 {
+  flex: 1;
+  text-align: center;
+  background-color: #ffffd9;
+  margin: 0;
+  padding: 20px 0;
+}
+header h2:nth-child(2) {
+  background-color: white;
 }
 
 #contents {
   display: flex;
   flex-flow: row wrap;
+  background-color: #ffffd9;
 }
-
-.skill {
-  flex: 1 200px;
+#contents > section {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 3;
+  justify-content: flex-start;
+}
+#contents > section article.skill {
+  flex: 0 1 auto;
   padding: 10px;
   margin: 10px;
-  background: aqua;
+  min-width: 50px;
+  background: #d9ffff;
+}
+#contents > section article.skill h3 {
+  text-align: center;
+}
+#contents > section article.skill p {
+  margin: 0 100px;
+}
+#contents > section article.skill:nth-child(even) {
+  background: #00cccc;
+}
+#contents aside {
+  flex: 1;
+}
+#contents aside section {
+  margin: 0% 10px;
+}
+
+footer {
+  background-color: #ffffd9;
+  height: 100%;
+}
+footer p {
+  text-align: center;
+  margin: 0;
+  padding: 20px;
 }
 
 @media screen and (max-width: 480px) {
@@ -55,6 +99,7 @@ li {
     padding: 0;
     border: 0;
   }
+
   h1 {
     font-size: 30px;
   }
@@ -65,7 +110,6 @@ li {
     width: 80%;
   }
 }
-
 @keyframes fadeInTitle {
   0% {
     opacity: 0;
@@ -74,3 +118,5 @@ li {
     opacity: 1;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
