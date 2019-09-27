@@ -1,0 +1,116 @@
+@import 'base';
+$font-stack: "Open Sans", sans-serif;
+$bg-color:#ffffd9;
+
+body {
+  width: 600px;
+}
+
+header {
+  h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+    color: #00539f;
+    animation-name: fadeInTitle;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+
+  h2 {
+    flex: 1;
+    text-align: center;
+    background-color: $bg-color;
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  h2:nth-child(2){
+    background-color: white;
+  }
+}
+
+#contents {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: $bg-color;
+
+  > section {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 3;
+    justify-content: flex-start;
+
+    article.skill {
+      flex: 0 1 auto;
+      padding: 10px;
+      margin: 10px;
+      min-width: 50px;
+      background: #d9ffff;
+      h3 {
+        text-align: center;
+      }
+
+      p {
+        margin: 0 100px;
+      }
+    }
+
+    article.skill:nth-child(even) {
+      background: #00cccc;
+    }
+  }
+
+  aside {
+    flex: 1;
+
+    section {
+      margin: 0% 10px;
+    }
+  }
+}
+
+footer {
+  background-color: $bg-color;
+  height: 100%;
+
+  p {
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /*画面幅が480pxまでの時*/
+  body {
+    width: 100%;
+    padding: 0;
+    border: 0;
+  }
+  h1 {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 781px) {
+  /*画面幅が781px以上の時*/
+  body {
+    width: 80%;
+  }
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
