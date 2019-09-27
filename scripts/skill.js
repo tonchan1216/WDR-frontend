@@ -15,5 +15,5 @@ export function addSkill () {
   article.appendChild(p);
 
   // 生成したdiv要素を追加する
-  document.getElementById('contents').appendChild(article);
+  document.querySelector('#contents>section').appendChild(article);
 }
