@@ -2,8 +2,10 @@
 $font-stack: "Open Sans", sans-serif;
 $bg-color:#ffffd9;
 
-header {
-  h1 {
+.main { background-color: $bg-color; }
+
+.header {
+  &__title {
     font-size: 3em;
     text-align: center;
     margin: 0;
@@ -11,74 +13,72 @@ header {
     color: #00539f;
     animation: fadeInTitle 3s ease-in;
   }
+}
 
-  h2 {
+.top-bar {
+  &__item {
     margin: 0;
     padding: 20px 0;
+    text-align: center;
 
-    &:nth-child(1){ background-color: $bg-color; }
-    &:nth-child(2){ background-color: white; }
+    &_active{ background-color: $bg-color; }
+    &_inactive{ background-color: white; }
+  }
 
-    a {
-      display: block;
-      text-align: center;
-      &:hover { text-decoration: none; }
-    }
+  &__link {
+    display: block;
+    text-align: center;
+    &:hover { text-decoration: none; }
   }
 }
 
-#contents {
-  background-color: $bg-color;
+.skill {
+  &_active { display: felx; }
+  &_inactive { display: none; }
 
-  > section .skill {
+  &__item {
     padding: 10px;
     background: #d9ffff;
     &:nth-child(even) { background: #00cccc; }
 
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    h3, p { text-align: center; }
   }
 
-  aside {
-    padding: 10px 30px;
-
-    section { margin: 0% 10px; }
-  }
+  &__name, &__stamp { text-align: center; }
 }
 
-footer {
+.side-bar {
+  padding: 10px 30px;
+  margin: 0% 10px;
+}
+
+
+.footer {
   background-color: $bg-color;
   margin-right: -15px;
   margin-left: -15px;
-  p {
+
+  &__patent {
     text-align: center;
     padding: 20px;
   }
 }
 
 @include media-breakpoint-down(sm) {
-  header h1 { font-size: 2.2em; }
+  .header__title { font-size: 2.2em; }
 }
 @include media-breakpoint-down(md) {
-  #contents {
-    > section {
-      margin: 0;
-    }
+  .skill { margin: 0; }
 
-    aside section{
-      text-align: center;
-      margin: 0;
-    }
+  .side-bar {
+    margin: 0;
+    text-align: center;
   }
 }
 
 @include media-breakpoint-down(lg) {
-  #contents aside {
-    padding: 10px 0px;
-  }
+  .side-bar { padding: 10px 0px; }
 }
 
 @keyframes fadeInTitle {
