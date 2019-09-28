@@ -1,5 +1,5 @@
 export function addSkill () {
-  let skillBox = document.getElementById('skill-box');
+  let skillBox = document.querySelector('.add-skill__textbox');
   const skillName = skillBox.value;
   let article = document.createElement('article');  // article要素を生成
   let h3 = document.createElement('h3');  // h3要素を生成
@@ -15,5 +15,5 @@ export function addSkill () {
   article.appendChild(p);
 
   // 生成したdiv要素を追加する
-  document.querySelector('#contents>section').appendChild(article);
+  document.querySelector('.skill').appendChild(article);
 }

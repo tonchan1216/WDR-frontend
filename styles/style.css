@@ -9655,7 +9655,11 @@ h3 {
     border-color: #dee2e6;
   }
 }
-header h1 {
+.main {
+  background-color: #ffffd9;
+}
+
+.header__title {
   font-size: 3em;
   text-align: center;
   margin: 0;
@@ -9663,73 +9667,77 @@ header h1 {
   color: #00539f;
   animation: fadeInTitle 3s ease-in;
 }
-header h2 {
+
+.top-bar__item {
   margin: 0;
   padding: 20px 0;
+  text-align: center;
 }
-header h2:nth-child(1) {
+.top-bar__item_active {
   background-color: #ffffd9;
 }
-header h2:nth-child(2) {
+.top-bar__item_inactive {
   background-color: white;
 }
-header h2 a {
+.top-bar__link {
   display: block;
   text-align: center;
 }
-header h2 a:hover {
+.top-bar__link:hover {
   text-decoration: none;
 }
 
-#contents {
-  background-color: #ffffd9;
+.skill_active {
+  display: felx;
 }
-#contents > section .skill {
+.skill_inactive {
+  display: none;
+}
+.skill__item {
   padding: 10px;
   background: #d9ffff;
-  display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-#contents > section .skill:nth-child(even) {
+.skill__item:nth-child(even) {
   background: #00cccc;
 }
-#contents > section .skill h3, #contents > section .skill p {
+.skill__name, .skill__stamp {
   text-align: center;
 }
-#contents aside {
+
+.side-bar {
   padding: 10px 30px;
-}
-#contents aside section {
   margin: 0% 10px;
 }
 
-footer {
+.footer {
   background-color: #ffffd9;
   margin-right: -15px;
   margin-left: -15px;
 }
-footer p {
+.footer__patent {
   text-align: center;
   padding: 20px;
 }
 
 @media (max-width: 767.98px) {
-  header h1 {
+  .header__title {
     font-size: 2.2em;
   }
 }
 @media (max-width: 991.98px) {
-  #contents > section {
+  .skill {
     margin: 0;
   }
-  #contents aside section {
-    text-align: center;
+
+  .side-bar {
     margin: 0;
+    text-align: center;
   }
 }
 @media (max-width: 1199.98px) {
-  #contents aside {
+  .side-bar {
     padding: 10px 0px;
   }
 }

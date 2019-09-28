@@ -5,6 +5,6 @@ export function fetchApi () {
   .then(text => {
     const json = JSON.parse(text);
     const json_forecasts = json["forecasts"][0];
-    document.getElementById('weather-news').textContent = json_forecasts["date"]+"："+json_forecasts["telop"];
+    document.querySelector('.news__contents').textContent = json_forecasts["date"]+"："+json_forecasts["telop"];
   });
 }
