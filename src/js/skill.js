@@ -1,13 +1,13 @@
-export function addSkill () {
+export function addSkill() {
   let skillBox = document.querySelector('.add-skill__textbox');
   const skillName = skillBox.value;
-  let article = document.createElement('article');  // article要素を生成
-  let h3 = document.createElement('h3');  // h3要素を生成
-  let p = document.createElement('p');  // p要素を生成
+  let article = document.createElement('article'); // article要素を生成
+  let h3 = document.createElement('h3'); // h3要素を生成
+  let p = document.createElement('p'); // p要素を生成
 
-  if (skillName == "") return
+  if (skillName == '') return;
 
-  skillBox.value = "";
+  skillBox.value = '';
   article.className = 'skill';
   h3.textContent = skillName;
 
