@@ -26,8 +26,11 @@ $bg-color:#ffffd9;
   }
 
   &__link {
-    display: block;
+    border: none;
+    background-color: inherit;
     text-align: center;
+    width: 100%;
+    height: 120%;
     &:hover { text-decoration: none; }
   }
 }

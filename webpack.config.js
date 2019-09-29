@@ -4,7 +4,7 @@ const enabledSourceMap = MODE === 'development';
 
 module.exports = {
   mode: MODE,
-  entry: './src/js/index.js',
+  entry: './src/js/main.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
@@ -18,7 +18,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss/, // 対象となるファイルの拡張子
+        test: /\.scss/, //拡張子 .scss の場合
         use: [
           'style-loader', // linkタグに出力する機能
           {
@@ -34,6 +34,14 @@ module.exports = {
             options: {
               sourceMap: enabledSourceMap
             }
+          }
+        ]
+      },
+      {
+        test: /\.js$/, // 拡張子 .js の場合
+        use: [
+          {
+            loader: 'babel-loader'
           }
         ]
       }
