@@ -1,5 +1,5 @@
 {
-    "extends": ["eslint:recommended", "airbnb", "eslint:recommended", "plugin:react/recommended"],
+    "extends": ["eslint:recommended", "airbnb", "plugin:react/recommended"],
     "parser": "babel-eslint",
     "env": {
         "browser": true,

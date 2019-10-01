@@ -1,10 +1,11 @@
 const path = require('path');
+
 const MODE = 'development';
 const enabledSourceMap = MODE === 'development';
 
 module.exports = {
   mode: MODE,
-  entry: './src/js/main.js',
+  entry: './src/js/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
@@ -18,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss/, //拡張子 .scss の場合
+        test: /\.scss/, // 拡張子 .scss の場合
         use: [
           'style-loader', // linkタグに出力する機能
           {
@@ -39,11 +40,12 @@ module.exports = {
       },
       {
         test: /\.js$/, // 拡張子 .js の場合
-        use: [
-          {
-            loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
           }
-        ]
+        }
       }
     ]
   }
