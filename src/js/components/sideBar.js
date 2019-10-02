@@ -1,13 +1,13 @@
 import React from 'react';
 
 const SideBar = props => {
-  const { data } = props;
-  const { addSkill, handleChange } = props;
+  const { news, input_text } = props;
+  const { addSkill, changeText } = props;
   return (
     <aside className="side-bar col-md-3 row">
       <section className="news col-md-12 col-sm-6">
         <h3 className="news__title">Weather News</h3>
-        <p className="news__contents">{data.news}</p>
+        <p className="news__contents">{news}</p>
       </section>
 
       <section className="add-skill col-md-12 col-sm-6">
@@ -17,14 +17,14 @@ const SideBar = props => {
             className="add-skill__textbox"
             type="text"
             name="title"
-            value={data.inputText}
-            onChange={event => handleChange(event)}
+            value={input_text}
+            onChange={event => changeText(event.target.value)}
           />
           <input
             className="add-skill__button"
             type="button"
             value="Add"
-            onClick={() => addSkill()}
+            onClick={() => (input_text ? addSkill(input_text) : null)}
           />
         </p>
       </section>

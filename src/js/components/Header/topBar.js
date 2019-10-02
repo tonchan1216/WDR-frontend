@@ -1,14 +1,13 @@
-/* eslint-disable object-curly-newline */
 import React from 'react';
 
 const TopBar = props => {
-  const { status, tag, name, togglePages } = props;
+  const { status, page, name, togglePage } = props;
   return (
     <h2 className={`top-bar__item top-bar__item_${status} col-sm-6`}>
       <button
         type="button"
-        className={`top-bar__link top-bar__link_${tag}`}
-        onClick={() => togglePages(tag)}
+        className={`top-bar__link top-bar__link_${page}`}
+        onClick={() => togglePage(page)}
       >
         {name}
       </button>

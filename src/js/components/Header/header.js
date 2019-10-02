@@ -1,21 +1,21 @@
 import React from 'react';
-import TopBar from './topBar';
+import TopBar from './TopBar';
 
-const Header = ({ status, togglePages }) => (
+const Header = ({ page, togglePage }) => (
   <header className="header">
     <h1 className="header__title">Frontend Developer Roadmap スタンプラリー</h1>
     <nav className="top-bar row">
       <TopBar
-        tag="front"
+        page="front"
         name="フロントエンド"
-        status={status.front}
-        togglePages={togglePages}
+        status={page === 'front' ? 'active' : 'inactive'}
+        togglePage={togglePage}
       />
       <TopBar
-        tag="back"
+        page="back"
         name="バックエンド"
-        status={status.back}
-        togglePages={togglePages}
+        status={page === 'back' ? 'active' : 'inactive'}
+        togglePage={togglePage}
       />
     </nav>
   </header>

@@ -1,8 +1,8 @@
 import React from 'react';
-import SkillItem from './skillItem';
+import SkillItem from './SkillItem';
 
-const Skill = ({ items, status }) => {
-  const activeItems = status.front === 'active' ? items.front : items.back;
+const Skill = ({ skill, page }) => {
+  const activeItems = skill[page];
   return (
     <section className="skill skill_active col-md-9 row">
       {activeItems.map(item => (
