@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SideBar = props => {
-  const { news, input_text } = props;
+  const { news, inputText } = props;
   const { addSkill, changeText } = props;
   return (
     <aside className="side-bar col-md-3 row">
@@ -17,14 +17,14 @@ const SideBar = props => {
             className="add-skill__textbox"
             type="text"
             name="title"
-            value={input_text}
+            value={inputText}
             onChange={event => changeText(event.target.value)}
           />
           <input
             className="add-skill__button"
             type="button"
             value="Add"
-            onClick={() => (input_text ? addSkill(input_text) : null)}
+            onClick={() => (inputText ? addSkill(inputText) : null)}
           />
         </p>
       </section>

@@ -2,7 +2,7 @@ import { ADD_SKILL, TOGGLE_PAGE, UPDATE_NEWS, CHANGE_TEXT } from './actions';
 
 const initialState = {
   news: '',
-  input_text: '',
+  inputText: '',
   page: 'front',
   skill: {
     front: [
@@ -34,13 +34,13 @@ export default (state = initialState, action) => {
 
   switch (action.type) {
     case CHANGE_TEXT:
-      return { ...state, input_text: action.text };
+      return { ...state, inputText: action.text };
     case UPDATE_NEWS:
       return { ...state, news: action.news };
     case ADD_SKILL:
       return {
         ...state,
-        input_text: '',
+        inputText: '',
         skill: {
           [state.page]: state.skill[state.page].concat(action.text),
           [invert]: state.skill[invert]

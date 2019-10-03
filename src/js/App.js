@@ -13,16 +13,15 @@ import Footer from './components/Footer';
 
 class App extends React.Component {
   componentDidMount() {
-    const { dispatchtogglePage } = this.props;
-    //   const url = 'assets/tenki.json';
-    //   fetch(url)
-    //     .then(response => response.text())
-    //     .then(text => {
-    //       const json = JSON.parse(text);
-    //       const jsonForecasts = json.forecasts[0];
-    //       dispatchtogglePage(`${jsonForecasts.date}：${jsonForecasts.telop}`);
-    //       console.log(json);
-    //     });
+    const { dispatchUpdateNews } = this.props;
+    const url = 'assets/tenki.json';
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+        const json = JSON.parse(text);
+        const jsonForecasts = json.forecasts[0];
+        dispatchUpdateNews(`${jsonForecasts.date}：${jsonForecasts.telop}`);
+      });
   }
 
   render() {
@@ -32,7 +31,8 @@ class App extends React.Component {
       dispatchChangeText,
       skill,
       page,
-      input_text
+      news,
+      inputText
     } = this.props;
     return (
       <div className="container">
@@ -40,7 +40,8 @@ class App extends React.Component {
         <Content
           skill={skill}
           page={page}
-          input_text={input_text}
+          news={news}
+          inputText={inputText}
           addSkill={dispatchAddSkill}
           changeText={dispatchChangeText}
         />
@@ -55,7 +56,7 @@ export default connect(
     skill: state.skill,
     page: state.page,
     news: state.news,
-    input_text: state.input_text
+    inputText: state.inputText
   }),
   dispatch => ({
     dispatchUpdateNews: news => dispatch(updateNews(news)),
