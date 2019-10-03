@@ -24,7 +24,7 @@ const SideBar = props => {
             className="add-skill__button"
             type="button"
             value="Add"
-            onClick={() => (inputText ? addSkill(inputText) : null)}
+            onClick={() => addSkill()}
           />
         </p>
       </section>

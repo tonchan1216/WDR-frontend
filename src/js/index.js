@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import App from './App';
-import skillApp from './reducers';
+import { Provider } from 'mobx-react';
 
-const store = createStore(skillApp);
+import App from './App';
+import SkillStore from './stores/SkillStore';
+
+const store = new SkillStore();
 
 const rootElement = document.getElementById('root');
 render(
