@@ -1,29 +1,16 @@
-import _ from 'lodash';
-import 'jquery';
-import 'popper.js';
-import 'bootstrap';
-import { fetchApi } from './fetch.js';
-import { addSkill } from './skill.js';
-import '../sass/main.scss';
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'mobx-react';
 
-document.querySelectorAll('.top-bar__link').forEach(link => {
-  link.addEventListener(
-    'click',
-    event => {
-      event.preventDefault();
-      alert('Sorry, under construction');
-    },
-    false
-  );
-});
+import App from './App';
+import SkillStore from './stores/SkillStore';
 
-document.querySelector('.add-skill__button').addEventListener(
-  'click',
-  event => {
-    event.preventDefault();
-    addSkill();
-  },
-  false
+const store = new SkillStore();
+
+const rootElement = document.getElementById('root');
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
 );
-
-fetchApi();
