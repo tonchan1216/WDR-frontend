@@ -1,10 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const SideBar = props => {
   const { news, inputText } = props;
   const { addSkill, changeText } = props;
   return (
-    <aside className="side-bar col-md-3 row">
+    <Side className="side-bar col-md-3 row">
       <section className="news col-md-12 col-sm-6">
         <h3 className="news__title">Weather News</h3>
         <p className="news__contents">{news}</p>
@@ -28,8 +29,13 @@ const SideBar = props => {
           />
         </p>
       </section>
-    </aside>
+    </Side>
   );
 };
+
+const Side = styled.aside`
+  padding: 10px 30px;
+  margin: 0% 10px;
+`;
 
 export default SideBar;
