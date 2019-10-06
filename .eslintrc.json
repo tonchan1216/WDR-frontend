@@ -3,7 +3,8 @@
     "parser": "babel-eslint",
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest/globals": true
     },
     "globals": {
         "Atomics": "readonly",
@@ -20,7 +21,8 @@
         "prettier",
         "react",
         "jsx-a11y",
-        "import"
+        "import",
+        "jest"
     ],
     "rules": {
         "arrow-body-style": "error",
