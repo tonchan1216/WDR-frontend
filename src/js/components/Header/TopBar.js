@@ -3,15 +3,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TopBar = props => {
-  const { page, name, togglePage } = props;
-  const status = page === 'front' ? 'active' : 'inactive';
+  const { page, name, togglePage, bar } = props;
+  const status = page === bar ? 'active' : 'inactive';
 
   return (
     <Title className={`top-bar__item top-bar__item_${status} col-sm-6`} status={status}>
       <Button
         type="button"
-        className={`top-bar__link top-bar__link_${page}`}
-        onClick={() => togglePage(page)}
+        className={`top-bar__link top-bar__link_${bar}`}
+        onClick={() => togglePage(bar)}
       >
         {name}
       </Button>

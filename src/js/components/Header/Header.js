@@ -8,8 +8,18 @@ const Header = ({ page, togglePage }) => (
       Frontend Developer Roadmap スタンプラリー
     </Title>
     <nav className="top-bar row">
-      <TopBar page="front" name="フロントエンド" togglePage={togglePage} />
-      <TopBar page="back" name="バックエンド" togglePage={togglePage} />
+      <TopBar
+        page={page}
+        bar="front"
+        name="フロントエンド"
+        togglePage={togglePage}
+      />
+      <TopBar
+        page={page}
+        bar="back"
+        name="バックエンド"
+        togglePage={togglePage}
+      />
     </nav>
   </header>
 );
