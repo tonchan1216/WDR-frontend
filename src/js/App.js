@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import React from 'react';
 
 import 'jquery';
@@ -6,6 +7,7 @@ import 'bootstrap';
 import '../sass/main.scss';
 
 import { observer, inject } from 'mobx-react';
+// import fetch from 'node-fetch';
 import Header from './components/Header/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
@@ -13,15 +15,25 @@ import Footer from './components/Footer';
 @inject('store')
 @observer
 class App extends React.Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.fetchJson = this.fetchJson.bind(this);
+  }
+
+  async componentDidMount() {
     const { store } = this.props;
+    const news = await this.fetchJson();
+    store.updateNews(news);
+  }
+
+  async fetchJson() {
     const url = 'assets/tenki.json';
-    fetch(url)
+    return fetch(url)
       .then(response => response.text())
       .then(text => {
         const json = JSON.parse(text);
         const jsonForecasts = json.forecasts[0];
-        store.updateNews(`${jsonForecasts.date}：${jsonForecasts.telop}`);
+        return `${jsonForecasts.date}：${jsonForecasts.telop}`;
       });
   }
 
