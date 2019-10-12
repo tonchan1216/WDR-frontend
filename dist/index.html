@@ -4,14 +4,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <meta name="theme-color" content="#ffffd9">
   <title>Frontend Developer Roadmap スタンプラリー</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
 </head>
 
 <body>
   <div id="root"></div>
 
+  <script>
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(
+        registration => {
+          console.log(
+            'ServiceWorker registration successful with scope: ',
+            registration.scope
+          );
+        },
+        err => {
+          console.log('ServiceWorker registration failed: ', err);
+        }
+      );
+    });
+  }
+  </script>
   <script src="main.js"></script>
+  <noscript>
+    <p>スクリプトが実行されない場合</p>
+</noscript>
 </body>
 
 </html>
