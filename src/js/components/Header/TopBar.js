@@ -3,7 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TopBar = props => {
-  const { status, page, name, togglePage } = props;
+  const { page, name, togglePage } = props;
+  const status = page === 'front' ? 'active' : 'inactive';
+
   return (
     <Title className={`top-bar__item top-bar__item_${status} col-sm-6`} status={status}>
       <Button
