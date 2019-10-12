@@ -31,10 +31,6 @@ export default class SkillStore {
     back: []
   };
 
-  @computed get getInputText() {
-    return this.inputText;
-  }
-
   @action.bound changeText(text) {
     this.inputText = text;
   }

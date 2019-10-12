@@ -9,15 +9,15 @@ const Header = ({ page, togglePage }) => (
     </Title>
     <nav className="top-bar row">
       <TopBar
-        page="front"
+        page={page}
+        bar="front"
         name="フロントエンド"
-        status={page === 'front' ? 'active' : 'inactive'}
         togglePage={togglePage}
       />
       <TopBar
-        page="back"
+        page={page}
+        bar="back"
         name="バックエンド"
-        status={page === 'back' ? 'active' : 'inactive'}
         togglePage={togglePage}
       />
     </nav>

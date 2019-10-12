@@ -3,7 +3,8 @@
     "parser": "babel-eslint",
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest/globals": true
     },
     "globals": {
         "Atomics": "readonly",
@@ -20,7 +21,8 @@
         "prettier",
         "react",
         "jsx-a11y",
-        "import"
+        "import",
+        "jest"
     ],
     "rules": {
         "arrow-body-style": "error",
@@ -51,6 +53,11 @@
         "react/prop-types": "off",
         "comma-dangle":"off",
         "object-curly-newline":"off",
-        "experimentalDecorators":"off"
+        "experimentalDecorators":"off",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
     }
 }
