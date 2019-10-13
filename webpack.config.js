@@ -1,13 +1,20 @@
+/* eslint-disable prettier/prettier */
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const MODE = 'development';
+const MODE = 'production';
 const enabledSourceMap = MODE === 'development';
 
 module.exports = {
   mode: MODE,
-  entry: './src/js/index.js',
+  entry: {
+    main: './src/js/index.js',
+    style: './src/sass/main.scss'
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
 
@@ -15,29 +22,28 @@ module.exports = {
     contentBase: 'dist',
     open: true
   },
-
+  optimization: {
+    usedExports: true,
+    splitChunks: {
+      name: 'vendor',
+      chunks: 'initial',
+      minSize: 24000,
+    },
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: { drop_console: true },
+          output: {
+            comments: false,
+            beautify: false
+          }
+        }
+      }),
+      new OptimizeCssAssetsPlugin({})
+    ]
+  },
   module: {
     rules: [
-      {
-        test: /\.scss/, // 拡張子 .scss の場合
-        use: [
-          'style-loader', // linkタグに出力する機能
-          {
-            loader: 'css-loader', // CSSをバンドルするための機能
-            options: {
-              url: false,
-              sourceMap: enabledSourceMap,
-              importLoaders: 2
-            }
-          },
-          {
-            loader: 'sass-loader', // Sassファイルの読み込みとコンパイル
-            options: {
-              sourceMap: enabledSourceMap
-            }
-          }
-        ]
-      },
       {
         test: /\.js$/, // 拡張子 .js の場合
         use: {
@@ -61,7 +67,32 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.scss/, // 拡張子 .scss の場合
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader', // CSSをバンドルするための機能
+            options: {
+              url: false,
+              sourceMap: enabledSourceMap,
+              importLoaders: 2
+            }
+          },
+          {
+            loader: 'sass-loader', // Sassファイルの読み込みとコンパイル
+            options: {
+              sourceMap: enabledSourceMap
+            }
+          }
+        ]
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    })
+  ]
 };
