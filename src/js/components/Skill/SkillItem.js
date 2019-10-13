@@ -28,6 +28,9 @@ const Name = styled.h3`
 
 const Stamp = styled.h3`
   text-align: center;
+  a {
+    color: #c20000;
+  }
 `;
 
 export default SkillItem;

@@ -1,23 +1,22 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
 $font-stack: "Open Sans", sans-serif;
 $bg-color:#ffffd9;
 
 body { font-family: $font-stack; }
 .main { background-color: $bg-color; }
 
-@include media-breakpoint-down(sm) {
+@media (max-width: 767.98px) {
   .header__title { font-size: 2.2em; }
 }
-@include media-breakpoint-down(md) {
+@media (max-width: 991.98px) {
   .skill { margin: 0; }
 
   .side-bar {
-    margin: 0;
+    margin: q0;
     text-align: center;
   }
 }
 
-@include media-breakpoint-down(lg) {
+@media (max-width: 1199.98px) {
   .side-bar { padding: 10px 0px; }
 }
 

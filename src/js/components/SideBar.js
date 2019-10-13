@@ -14,19 +14,27 @@ const SideBar = props => {
       <section className="add-skill col-md-12 col-sm-6">
         <h3 className="add-skill__title">Add Skill</h3>
         <p className="add-skill__form">
-          <input
-            className="add-skill__textbox"
-            type="text"
-            name="title"
-            value={inputText}
-            onChange={event => changeText(event.target.value)}
-          />
-          <input
-            className="add-skill__button"
-            type="button"
-            value="Add"
-            onClick={() => addSkill()}
-          />
+          <label htmlFor="skill_textbox">
+            Type:
+            <input
+              id="skill_textbox"
+              className="add-skill__textbox"
+              type="text"
+              name="title"
+              value={inputText}
+              onChange={event => changeText(event.target.value)}
+            />
+          </label>
+          <label htmlFor="skill_button">
+            Click:
+            <input
+              id="skill_button"
+              className="add-skill__button"
+              type="button"
+              value="Add"
+              onClick={() => addSkill()}
+            />
+          </label>
         </p>
       </section>
     </Side>

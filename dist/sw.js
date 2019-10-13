@@ -1,3 +1,8 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+/* eslint-disable prettier/prettier */
+/* eslint-disable indent */
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = ['/', '/main.js', '/assets/tenki.json'];
 
@@ -43,13 +48,12 @@ self.addEventListener('activate', event => {
   const cacheWhitelist = ['pages-cache-v1', 'blog-posts-cache-v1'];
 
   event.waitUntil(
-    caches.keys().then(cacheNames =>
-      Promise.all(
+    caches.keys().then(cacheNames => Promise.all(
         cacheNames.map(cacheName => {
-        if (cacheWhitelist.indexOf(cacheName) === -1) {
-          return caches.delete(cacheName);
-        }
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
         })
-    ))
+      ))
   );
 });
