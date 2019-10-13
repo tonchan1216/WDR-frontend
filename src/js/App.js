@@ -1,13 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
-
-import 'jquery';
-import 'popper.js';
-import 'bootstrap';
-import '../sass/main.scss';
-
 import { observer, inject } from 'mobx-react';
-// import fetch from 'node-fetch';
 import Header from './components/Header/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';

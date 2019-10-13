@@ -1,4 +1,4 @@
-import { observable, computed, action } from 'mobx';
+import { observable, action } from 'mobx';
 
 export default class SkillStore {
   @observable news = '';
@@ -43,7 +43,6 @@ export default class SkillStore {
     if (this.inputText === '') return;
     this.skill[this.page] = this.skill[this.page].concat(this.inputText);
     this.inputText = '';
-    // console.log(this.skill[this.page]);
   }
 
   @action.bound togglePage(page) {
