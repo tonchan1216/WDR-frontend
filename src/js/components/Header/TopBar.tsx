@@ -1,8 +1,16 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
+import { _togglePage } from '../../Types';
 
-const TopBar = props => {
+type Props = {
+  page: string,
+  name: string,
+  bar: string,
+  togglePage: _togglePage
+}
+
+const TopBar: React.FC<Props> = (props) => {
   const { page, name, togglePage, bar } = props;
   const status = page === bar ? 'active' : 'inactive';
 
@@ -19,11 +27,11 @@ const TopBar = props => {
   );
 };
 
-const Title = styled.h2`
+const Title = styled.h2<{status: string}>`
   margin: 0;
   padding: 20px 0;
   text-align: center;
-  background-color: ${props => (props.status === 'active' ? '#ffffd9' : 'white')};
+  background-color: ${({status}) => (status === 'active' ? '#ffffd9' : 'white')};
 `;
 
 const Button = styled.button`

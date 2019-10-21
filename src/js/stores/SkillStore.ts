@@ -1,13 +1,14 @@
 import { observable, action } from 'mobx';
+import { _Skill } from '../Types';
 
 export default class SkillStore {
-  @observable news = '';
+  @observable news: string = '';
 
-  @observable inputText = '';
+  @observable inputText: string = '';
 
-  @observable page = 'front';
+  @observable page: string = 'front';
 
-  @observable.shallow skill = {
+  @observable.shallow skill: _Skill = {
     front: [
       'HTML',
       'CSS',
@@ -31,21 +32,22 @@ export default class SkillStore {
     back: []
   };
 
-  @action.bound changeText(text) {
+  @action.bound changeText(text: string) {
     this.inputText = text;
   }
 
-  @action.bound updateNews(news) {
+  @action.bound updateNews(news: string) {
     this.news = news;
   }
 
   @action.bound addSkill() {
     if (this.inputText === '') return;
-    this.skill[this.page] = this.skill[this.page].concat(this.inputText);
+    const page: string = this.page;
+    this.skill[page] = this.skill[page].concat(this.inputText);
     this.inputText = '';
   }
 
-  @action.bound togglePage(page) {
+  @action.bound togglePage(page: string) {
     this.page = page;
   }
 }

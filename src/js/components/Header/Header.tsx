@@ -1,8 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import TopBar from './TopBar';
+import { _togglePage } from '../../Types';
 
-const Header = ({ page, togglePage }) => (
+
+const Header: React.FC<{ page: string, togglePage: _togglePage }> = ({ page, togglePage }) => (
   <header className="header">
     <Title className="header__title">
       Frontend Developer Roadmap スタンプラリー

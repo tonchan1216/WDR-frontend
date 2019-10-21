@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
-const SkillItem = ({ name }) => (
+const SkillItem = ({ name }: { name: string}) => (
   <Article className="skill__item col-lg-3 col-md-4 col-sm-6">
     <Name className="skill__name">{name}</Name>
     <Stamp className="skill__stamp">
