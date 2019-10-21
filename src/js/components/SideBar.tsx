@@ -1,7 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
+import { _Skill, _addSkill, _changeText } from '../Types';
 
-const SideBar = props => {
+type Props = {
+  news: string,
+  inputText: string,
+  changeText: _changeText,
+  addSkill: _addSkill
+}
+const SideBar: React.FC<Props> = (props) => {
   const { news, inputText } = props;
   const { addSkill, changeText } = props;
   return (

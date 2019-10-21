@@ -1,16 +1,17 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable prettier/prettier */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const MODE = 'production';
+const MODE = 'development';
 const enabledSourceMap = MODE === 'development';
 
 module.exports = {
   mode: MODE,
   entry: {
-    main: './src/js/index.js',
+    main: './src/js/index.tsx',
     style: './src/sass/main.scss'
   },
   output: {
@@ -42,31 +43,36 @@ module.exports = {
       new OptimizeCssAssetsPlugin({})
     ]
   },
+  devtool: 'source-map',
+  resolve: {
+    extensions: ['.js', '.json', '.ts', '.tsx']
+  },
   module: {
     rules: [
       {
-        test: /\.js$/, // 拡張子 .js の場合
-        use: {
-          loader: 'babel-loader',
-          query: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  targets: {
-                    node: 'current'
-                  }
-                }
-              ],
-              '@babel/preset-react'
-            ],
-            plugins: [
-              ['@babel/plugin-proposal-object-rest-spread'],
-              ['@babel/plugin-proposal-decorators', { legacy: true }],
-              ['@babel/plugin-proposal-class-properties', { loose: true }]
-            ]
-          }
-        }
+        test: /\.(ts|tsx)$/,
+        loader: 'ts-loader'
+        // use: {
+        //   loader: 'babel-loader',
+        //   query: {
+        //     presets: [
+        //       [
+        //         '@babel/preset-env',
+        //         {
+        //           targets: {
+        //             node: 'current'
+        //           }
+        //         }
+        //       ],
+        //       '@babel/preset-react'
+        //     ],
+        //     plugins: [
+        //       ['@babel/plugin-proposal-object-rest-spread'],
+        //       ['@babel/plugin-proposal-decorators', { legacy: true }],
+        //       ['@babel/plugin-proposal-class-properties', { loose: true }]
+        //     ]
+        //   }
+        // }
       },
       {
         test: /\.scss/, // 拡張子 .scss の場合

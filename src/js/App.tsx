@@ -1,14 +1,30 @@
 /* eslint-disable class-methods-use-this */
-import React from 'react';
+import * as React from 'react';
 import { observer, inject } from 'mobx-react';
 import Header from './components/Header/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
+import { _Skill, _addSkill, _changeText, _updateNews, _togglePage } from './Types';
+
+interface Props {
+  store?: Store | any
+}
+
+interface Store {
+  page: string,
+  news: string,
+  skill: _Skill,
+  inputText: string,
+  addSkill: _addSkill,
+  changeText: _changeText,
+  updateNews: _updateNews,
+  togglePage: _togglePage,
+}
 
 @inject('store')
 @observer
-class App extends React.Component {
-  constructor(props) {
+class App extends React.Component<Props> {
+  constructor(props: Props) {
     super(props);
     this.fetchJson = this.fetchJson.bind(this);
   }

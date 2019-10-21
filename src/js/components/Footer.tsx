@@ -1,7 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
-const Footer = () => (
+
+const Footer: React.FC = () => (
   <Foot className="footer">
     <Patent className="footer__patent">(c) 2019 tonchan1216</Patent>
   </Foot>
