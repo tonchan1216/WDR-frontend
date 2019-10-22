@@ -52,27 +52,6 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         loader: 'ts-loader'
-        // use: {
-        //   loader: 'babel-loader',
-        //   query: {
-        //     presets: [
-        //       [
-        //         '@babel/preset-env',
-        //         {
-        //           targets: {
-        //             node: 'current'
-        //           }
-        //         }
-        //       ],
-        //       '@babel/preset-react'
-        //     ],
-        //     plugins: [
-        //       ['@babel/plugin-proposal-object-rest-spread'],
-        //       ['@babel/plugin-proposal-decorators', { legacy: true }],
-        //       ['@babel/plugin-proposal-class-properties', { loose: true }]
-        //     ]
-        //   }
-        // }
       },
       {
         test: /\.scss/, // 拡張子 .scss の場合

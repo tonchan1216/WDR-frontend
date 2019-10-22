@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx';
 import { _Skill } from '../Types';
 
-export default class SkillStore {
+class SkillStore {
   @observable news: string = '';
 
   @observable inputText: string = '';
@@ -51,3 +51,5 @@ export default class SkillStore {
     this.page = page;
   }
 }
+
+export default SkillStore;
