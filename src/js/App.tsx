@@ -40,9 +40,10 @@ class App extends React.Component<Props> {
     return fetch(url)
       .then(response => response.text())
       .then(text => {
-        const json = JSON.parse(text);
-        const jsonForecasts = json.forecasts[0];
-        return `${jsonForecasts.date}：${jsonForecasts.telop}`;
+        // const json = JSON.parse(text);
+        // const jsonForecasts = json.forecasts[0];
+        // return `${jsonForecasts.date}：${jsonForecasts.telop}`;
+        return 'mock json';
       });
   }
 
