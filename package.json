@@ -5,7 +5,7 @@
   "author": "Borek Bernard <borekb@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "electron": "webpack && electron main.js",
+    "electron": "electron main.js",
     "start": "webpack-dev-server",
     "build": "webpack",
     "watch": "webpack --watch",
