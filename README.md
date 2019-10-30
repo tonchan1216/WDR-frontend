@@ -40,3 +40,39 @@ Web Developer Roadmapに標された各エンジニアスキルをスタンプ�
 ### フロントエンド編＃6
 >Tag: v6.0
 * CSS Arrchitectures
+
+### フロントエンド編＃7
+>Tag: v7.0
+* Build Tootls
+
+### フロントエンド編＃8
+>Tag: v8.0
+* Pick a Framework
+
+### フロントエンド編＃9
+>Tag: v9.0
+* CSS in JS
+
+### フロントエンド編＃10
+>Tag: v10
+* Testing your Apps
+
+### フロントエンド編＃11
+>Tag: v11
+* Progressive Web Apps
+
+### フロントエンド編＃12
+>Tag: v12
+* Type Checkers
+
+### フロントエンド編＃13
+>Tag: v13
+* Server Side Rendering
+
+### フロントエンド編＃14
+>Tag: v14
+* Static Site Generators
+
+### フロントエンド編＃15
+>Tag: v15
+* Desktop Applications
