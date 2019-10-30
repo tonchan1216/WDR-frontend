@@ -1,10 +1,10 @@
 /* eslint-disable class-methods-use-this */
 import * as React from 'react';
 import { observer, inject } from 'mobx-react';
-import Header from './components/Header/Header';
-import Content from './components/Content';
-import Footer from './components/Footer';
-import { _Skill, _addSkill, _changeText, _updateNews, _togglePage } from './Types';
+import Header from './Header/Header';
+import Content from './Content';
+import Footer from './Footer';
+import { _Skill, _addSkill, _changeText, _updateNews, _togglePage } from '../Types';
 
 interface Props {
   store?: Store | any
@@ -40,9 +40,10 @@ class App extends React.Component<Props> {
     return fetch(url)
       .then(response => response.text())
       .then(text => {
-        const json = JSON.parse(text);
-        const jsonForecasts = json.forecasts[0];
-        return `${jsonForecasts.date}：${jsonForecasts.telop}`;
+        // const json = JSON.parse(text);
+        // const jsonForecasts = json.forecasts[0];
+        // return `${jsonForecasts.date}：${jsonForecasts.telop}`;
+        return 'mock json';
       });
   }
 
